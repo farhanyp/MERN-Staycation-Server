@@ -1,0 +1,42 @@
+<div class="tab-pane fade active" id="add-item" role="tabpanel" aria-labelledby="profile-tab">
+    <form action="/admin/item" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="tite">Title</label>
+                <input type="text" class="form-control" name="title" placeholder="Enter title" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" name="price" placeholder="Enter Price" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" name="city" placeholder="Enter City" required>
+            </div>
+            <div class="form-group">
+                <label for="categoryId">Category</label>
+                <select type="text" class="form-control" name="categoryId">
+                    <option value="">--- Category ---</option>
+                    <% for( let index=0; index < category.length; index++ ) { %>
+                        <option value="<%= category[index].id %>">
+                            <%= category[index].name %>
+                        </option>
+
+                        <% } %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name">Image</label>
+                <input type="file" class="form-control" name="image" multiple required>
+            </div>
+            <div class="form-group">
+                <label for="about">Description</label>
+                <textarea type="text" class="form-control" id="about" name="about"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,57 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name Bank</th>
+                        <th>Nomor Rekening</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for( let index=0; index < bank.length; index++ ) { %>
+                        <tr>
+                            <td>
+                                <%= index + 1 %>
+                            </td>
+                            <td>
+                                <%= bank[index].nameBank %>
+                            </td>
+                            <td>
+                                <%= bank[index].nomorRekening %>
+                            </td>
+                            <td>
+                                <%= bank[index].name %>
+                            </td>
+                            <td>
+                                <img src="http://localhost:3000/<%= bank[index].imageUrl %>" style="width: 100px;">
+                            </td>
+                            <td>
+                                <form action="/admin/bank/<%= bank[index].id %>?_method=DELETE" method="post">
+                                    <a href="javascript:void();" type="button"
+                                        class="btn btn-warning btn-circle btn-sm button-update"
+                                        data-id="<%= bank[index].id %>" data-name="<%= bank[index].name %>"
+                                        data-namebank="<%= bank[index].nameBank %>"
+                                        data-nomorrekening="<%= bank[index].nomorRekening %>"><i
+                                            class="fas fa-edit"></i></a>
+                                    <button type="submit" class="btn btn-danger btn-circle btn-sm"><i
+                                            class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
