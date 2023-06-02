@@ -36,6 +36,9 @@ module.exports = {
     actionSignin: async (req, res) => {
         try {
             const {username, password} = req.body
+            res.status(200).json({
+                result: "result"
+            })
             const user = await User.findOne({username: username})
             if(!user){
                 req.flash('alertMessage', 'username atau password anda salah')
@@ -48,7 +51,7 @@ module.exports = {
                         id: user._id,
                         username: user.username,
                     }
-                    res.redirect('/admin/dashboard')
+                    // res.redirect('/admin/dashboard')
                 }else{
                     req.flash('alertMessage', 'username atau password anda salah')
                     req.flash('alertStatus', 'danger')
