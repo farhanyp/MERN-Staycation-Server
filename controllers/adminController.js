@@ -48,7 +48,6 @@ module.exports = {
                         id: user._id,
                         username: user.username,
                     }
-                    req.session.save()
                     res.redirect('/admin/dashboard')
                 }else{
                     req.flash('alertMessage', 'username atau password anda salah')
