@@ -44,10 +44,7 @@ module.exports = {
             }
             bcrypt.compare(password, user.password, function(err, result) {
                 if(result){
-                    req.session.user = {
-                        id: user._id,
-                        username: user.username,
-                    }
+                    req.session.user = user
                     res.redirect('/admin/booking')
                 }else{
                     req.flash('alertMessage', 'username atau password anda salah')
