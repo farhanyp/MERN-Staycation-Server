@@ -13,6 +13,27 @@ mongoose.connect('mongodb+srv://farhanyp:kwU7vLFZItO5MLH8@cluster1.3o3a3wr.mongo
 
 
 var app = express();
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.use(methodOverride('_method'))
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 }
+}));
+app.use(flash());
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/sb-admin-2', express.static(path.join(__dirname,'/node_modules/startbootstrap-sb-admin-2')))
+
+
 app.use('/', indexRouter);
+
+
+app.listen(3000, () => console.log('Sever Running On port 3000'))
 
 module.exports = app;
