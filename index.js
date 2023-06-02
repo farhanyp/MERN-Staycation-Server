@@ -34,7 +34,7 @@ app.use('/sb-admin-2', express.static(path.join(__dirname,'/node_modules/startbo
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
-app.use('/admin', adminRouter)
+app.use('/', adminRouter)
 // app.use('/api/v1/member', apiRouter)
 
 
