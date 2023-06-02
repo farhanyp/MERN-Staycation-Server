@@ -9,6 +9,10 @@
     "routes": [
       {
         "src": "/(.*)",
+        "dest": "/"
+      },
+      {
+        "src": "/admin",
         "dest": "/admin"
       }
     ]
