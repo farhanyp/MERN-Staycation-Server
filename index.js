@@ -22,7 +22,8 @@ app.use(methodOverride('_method'))
 app.use(session({
   secret: 'some secret',
   saveUninitialized: false,
-  cookie: { maxAge: 30000 }
+  cookie: { maxAge: 30000 },
+  resave: true
 }));
 app.use(flash());
 app.use(logger('dev'));

@@ -43,9 +43,6 @@ module.exports = {
                 res.redirect('/admin/signin')
             }
             bcrypt.compare(password, user.password, function(err, result) {
-                res.status(200).json({
-                    result: result
-                })
                 if(result){
                     req.session.user = {
                         id: user._id,
