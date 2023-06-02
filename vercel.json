@@ -9,11 +9,11 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/(.*)"
+        "dest": "/"
       },
       {
-        "src": "/admin(.*)",
-        "dest": "/admin(.*)"
+        "src": "/admin",
+        "dest": "/admin"
       }
     ]
   }
