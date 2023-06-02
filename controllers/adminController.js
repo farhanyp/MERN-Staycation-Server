@@ -48,7 +48,6 @@ module.exports = {
                         id: user._id,
                         username: user.username,
                     }
-                    req.session.cookie.expires = (60000 * 60) * 24
                     res.redirect('/admin/dashboard')
                 }else{
                     req.flash('alertMessage', 'username atau password anda salah')
