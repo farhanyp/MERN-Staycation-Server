@@ -20,10 +20,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'))
 app.use(session({
-  secret: 'keyboard cat',
-  resave: true,
-  saveUninitialized: true,
-  cookie: { maxAge: 269999999999 }
+  secret: 'some secret',
+  saveUninitialized: false,
+  cookie: { maxAge: 30000 }
 }));
 app.use(flash());
 app.use(logger('dev'));

@@ -65,7 +65,7 @@ module.exports = {
     },
     viewDashboard: async (req,res) => {
         try {
-            console.log(req.session)
+            console.log(req.sessionID)
             const member = await Member.find()
             const booking = await Booking.find()
             const item = await Item.find()
