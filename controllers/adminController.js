@@ -36,9 +36,6 @@ module.exports = {
     actionSignin: async (req, res) => {
         try {
             const {username, password} = req.body
-            res.status(200).json({
-                result: "result"
-            })
             const user = await User.findOne({username: username})
             if(!user){
                 req.flash('alertMessage', 'username atau password anda salah')
@@ -46,6 +43,9 @@ module.exports = {
                 res.redirect('/admin/signin')
             }
             bcrypt.compare(password, user.password, function(err, result) {
+                res.status(200).json({
+                    result: result
+                })
                 if(result){
                     req.session.user = {
                         id: user._id,
