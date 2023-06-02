@@ -14,6 +14,14 @@
       {
         "src": "/admin",
         "dest": "/admin"
+      },
+      {
+        "src": "/users",
+        "dest": "/users"
+      },
+      {
+        "src": "/api/v1/member",
+        "dest": "/api/v1/member"
       }
     ]
   }
