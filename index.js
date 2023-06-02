@@ -21,9 +21,9 @@ app.set('view engine', 'ejs');
 app.use(methodOverride('_method'))
 app.use(session({
   secret: 'keyboard cat',
-  resave: false,
+  resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 }
+  cookie: { maxAge: 269999999999 }
 }));
 app.use(flash());
 app.use(logger('dev'));
