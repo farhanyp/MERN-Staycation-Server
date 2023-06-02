@@ -7,6 +7,7 @@ const session = require('express-session')
 const flash = require('connect-flash');
 const logger = require('morgan');
 const indexRouter = require('./routes/index');
+const adminRouter = require('./routes/admin');
 // import Mongoose
 const mongoose = require("mongoose")
 mongoose.connect('mongodb+srv://farhanyp:kwU7vLFZItO5MLH8@cluster1.3o3a3wr.mongodb.net/db_mern_staycation?retryWrites=true&w=majority');
@@ -31,9 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/sb-admin-2', express.static(path.join(__dirname,'/node_modules/startbootstrap-sb-admin-2')))
 
 
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 // app.use('/users', usersRouter);
-// app.use('/admin', adminRouter)
+app.use('/admin', adminRouter)
 // app.use('/api/v1/member', apiRouter)
 
 
