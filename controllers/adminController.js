@@ -14,24 +14,12 @@ const bcrypt = require('bcryptjs')
 module.exports = {
     
     viewSignIn: async (req,res) =>{
-        try {
-            
-            const alertMessage = req.flash('alertMessage')
-            const alertStatus = req.flash('alertStatus')
-            const alert = { message: alertMessage, status: alertStatus}
-            if(req.session.user === undefined){
-                res.render('index',{
-                    alert: alert,
-                    title: "Staycation | Login",
-                })
-            }else{
-                res.redirect('/admin/dashboard')
-            }
-        } catch (error) {
-            req.flash('alertMessage', `${error.message}`)
-            req.flash('alertStatus', 'danger')
-            res.redirect('/admin/signin')
-        }
+        router.get("/", async (req, res, next) => {
+            return res.status(200).json({
+              title: "Express Testing",
+              message: "The app is working properly!",
+            });
+          });
     },
     actionSignin: async (req, res) => {
         try {
