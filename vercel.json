@@ -12,7 +12,7 @@
         "dest": "/"
       },
       {
-        "src": "/admin",
+        "src": "/admin(.*)",
         "dest": "/admin"
       }
     ]
