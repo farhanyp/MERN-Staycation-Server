@@ -22,7 +22,7 @@ app.use(methodOverride('_method'))
 app.use(cookieSession({
   name: 'sessionGG',
   keys: ['secret-key'],
-  maxAge: 30000
+  maxAge: 3600000
 }));
 app.use(flash());
 app.use(logger('dev'));
