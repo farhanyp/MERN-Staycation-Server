@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override')
-const session = require('express-session')
+const cookieSession = require('cookie-session');
 const flash = require('connect-flash');
 const logger = require('morgan');
 const indexRouter = require('./routes/index');
@@ -19,11 +19,10 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'))
-app.use(session({
-  secret: 'some secret',
-  saveUninitialized: false,
-  cookie: { maxAge: 30000 },
-  resave: true
+app.use(cookieSession({
+  name: 'sessionGG',
+  keys: ['secret-key'],
+  maxAge: 30000
 }));
 app.use(flash());
 app.use(logger('dev'));
