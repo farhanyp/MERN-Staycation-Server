@@ -21,7 +21,7 @@ const uploadMulti = multer({
     fileFilter: (req, file, cb) => {
         checkFileType(file, cb)
     }
-}).array("images")
+}).array("image")
 
 const checkFileType = (file, cb) => {
     const fileTypes = /jpeg|jpg|png|gif/

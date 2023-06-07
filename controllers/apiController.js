@@ -55,7 +55,9 @@ module.exports = {
                 }
             }
     
+            res.header("Access-Control-Allow-Origin", "*");
             res.status(200).json({
+
                 hero:{
                     Travelers: Travelers.length,
                     Treasure: Treasure.length,

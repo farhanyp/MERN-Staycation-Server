@@ -546,7 +546,6 @@ module.exports = {
             const alertStatus = req.flash('alertStatus')
             const alert = {message: alertMessage, status: alertStatus}
             const booking = await Booking.findOne({_id: id}).populate('memberId').populate('bankId')
-            console.log(booking)
             res.render('admin/booking/show_detail_booking.ejs',{
                 title: "Staycation | Detail Booking",
                 user: req.session.user,
