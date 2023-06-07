@@ -92,6 +92,7 @@ module.exports = {
             familyOccupation: "Product Designer"
           }
         
+        res.header("Access-Control-Allow-Origin", "*");
         res.status(200).json({
             ...item._doc,
             bank,
@@ -176,6 +177,7 @@ module.exports = {
             
             const booking = await Booking.create(newBooking)            
         
+            res.header("Access-Control-Allow-Origin", "*");
             return res.status(201).json({message: "Sukses Booking", booking})
             
         } catch (error) {
