@@ -55,7 +55,10 @@ module.exports = {
                 }
             }
     
-            res.header("Access-Control-Allow-Origin", "*");
+            res.header('Access-Control-Allow-Origin', "*");
+            res.header('Access-Control-Allow-Methods', 'POST');
+            res.header("Access-Control-Allow-Headers", "accept, content-type");
+            res.header("Access-Control-Max-Age", "1728000");
             res.status(200).json({
 
                 hero:{
@@ -92,7 +95,10 @@ module.exports = {
             familyOccupation: "Product Designer"
           }
         
-        res.header("Access-Control-Allow-Origin", "*");
+        res.header('Access-Control-Allow-Origin', "*");
+        res.header('Access-Control-Allow-Methods', 'POST');
+        res.header("Access-Control-Allow-Headers", "accept, content-type");
+        res.header("Access-Control-Max-Age", "1728000");
         res.status(200).json({
             ...item._doc,
             bank,
@@ -177,7 +183,10 @@ module.exports = {
             
             const booking = await Booking.create(newBooking)            
         
-            res.header("Access-Control-Allow-Origin", "*");
+            res.header('Access-Control-Allow-Origin', "*");
+            res.header('Access-Control-Allow-Methods', 'POST');
+            res.header("Access-Control-Allow-Headers", "accept, content-type");
+            res.header("Access-Control-Max-Age", "1728000");
             return res.status(201).json({message: "Sukses Booking", booking})
             
         } catch (error) {
