@@ -65,7 +65,10 @@ module.exports = {
                     Travelers: Travelers.length,
                     Treasure: Treasure.length,
                     City: City.length
-                }
+                },
+                mostpicked,
+                category,
+                testimonial
             })
 
         } catch (error) {
