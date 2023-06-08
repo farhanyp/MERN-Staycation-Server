@@ -1,8 +1,8 @@
 // const Booking = require('./models/Booking')
 // const Category = require('./models/Category')
-const Member = require('./models/Member')
+// const Member = require('./models/Member')
 // const User = require('./models/User')
-const mongoose = require("mongoose")
+// const mongoose = require("mongoose")
 
 mongoose.connect('mongodb+srv://farhanyp:kwU7vLFZItO5MLH8@cluster1.3o3a3wr.mongodb.net/db_mern_staycation?retryWrites=true&w=majority');
 
@@ -30,14 +30,14 @@ mongoose.connect('mongodb+srv://farhanyp:kwU7vLFZItO5MLH8@cluster1.3o3a3wr.mongo
 //   },
 // ];
 
-const dataMember = [
-  {
-      firstName: 'Farhan Yudha Pratama',
-      lastName: 'Yudha Pratama',
-      email: "farhan@gmail.com",
-      phoneNumber: "08523641225" 
-  },
-];
+// const dataMember = [
+//   {
+//       firstName: 'Farhan Yudha Pratama',
+//       lastName: 'Yudha Pratama',
+//       email: "farhan@gmail.com",
+//       phoneNumber: "08523641225" 
+//   },
+// ];
 
 // const dataCategory = [
 //   {
@@ -53,5 +53,5 @@ const dataMember = [
 //   }
 
 // Booking.create(dataBooking).then(res => console.log("Booking sudah masuk"))
-Member.create(dataMember).then(res => console.log("Member sudah masuk"))
+// Member.create(dataMember).then(res => console.log("Member sudah masuk"))
 // User.create(dataUser).then(res => console.log("User sudah masuk"))
