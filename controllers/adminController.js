@@ -62,7 +62,6 @@ module.exports = {
     },
     viewDashboard: async (req,res) => {
         try {
-            console.log(req.sessionID)
             const member = await Member.find()
             const booking = await Booking.find()
             const item = await Item.find()
@@ -452,9 +451,6 @@ module.exports = {
     },
     addActivity: async (req, res) => {
         const { name, type, itemId} = req.body
-        console.log({
-            name, type,itemId
-        })
         const item = await Item.findOne({_id: itemId})
         try {
             const activity = await Activity.create({
