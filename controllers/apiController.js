@@ -56,19 +56,20 @@ module.exports = {
             }
     
             res.header('Access-Control-Allow-Origin', "*");
-            res.header('Access-Control-Allow-Methods', 'POST');
-            res.header("Access-Control-Allow-Headers", "accept, content-type");
-            res.header("Access-Control-Max-Age", "1728000");
+            // res.header('Access-Control-Allow-Methods', 'POST');
+            // res.header("Access-Control-Allow-Headers", "accept, content-type");
+            // res.header("Access-Control-Max-Age", "1728000");
             res.status(200).json({
 
-                hero:{
-                    Travelers: Travelers.length,
-                    Treasure: Treasure.length,
-                    City: City.length
-                },
-                mostpicked,
-                category,
-                testimonial
+                message: "Hello, World!"
+                // hero:{
+                //     Travelers: Travelers.length,
+                //     Treasure: Treasure.length,
+                //     City: City.length
+                // },
+                // mostpicked,
+                // category,
+                // testimonial
             })
 
         } catch (error) {
