@@ -61,15 +61,14 @@ module.exports = {
             // res.header("Access-Control-Max-Age", "1728000");
             res.status(200).json({
 
-                message: "Hello, World!"
-                // hero:{
-                //     Travelers: Travelers.length,
-                //     Treasure: Treasure.length,
-                //     City: City.length
-                // },
-                // mostpicked,
-                // category,
-                // testimonial
+                hero:{
+                    Travelers: Travelers.length,
+                    Treasure: Treasure.length,
+                    City: City.length
+                },
+                mostpicked,
+                category,
+                testimonial
             })
 
         } catch (error) {
